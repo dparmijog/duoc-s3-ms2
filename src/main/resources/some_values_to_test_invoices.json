@@ -1,0 +1,38 @@
+[
+  {
+    "issuerNif": "76841082-8",
+    "issuerName": "Pet Supplies Inc.",
+    "receiverNif": "18955882-1",
+    "receiverName": "John Doe",
+    "petName": "Buddy",
+    "petDescription": "Golden Retriever, 2 years old",
+    "date": "2023-10-01"
+  },
+  {
+    "issuerNif": "76841082-8",
+    "issuerName": "Pet Supplies Inc.",
+    "receiverNif": "18711239-7",
+    "receiverName": "Jane Smith",
+    "petName": "Whiskers",
+    "petDescription": "Siamese Cat, 3 years old",
+    "date": "2023-10-02"
+  },
+  {
+    "issuerNif": "76841082-8",
+    "issuerName": "Vet Services LLC",
+    "receiverNif": "18711239-7",
+    "receiverName": "Pet Supplies Inc.",
+    "petName": "Max",
+    "petDescription": "German Shepherd, 4 years old",
+    "date": "2023-10-03"
+  },
+  {
+    "issuerNif": "76841082-8",
+    "issuerName": "Animal Care Center",
+    "receiverNif": "18711239-7",
+    "receiverName": "Alice Johnson",
+    "petName": "Charlie",
+    "petDescription": "Beagle, 1 year old",
+    "date": "2023-10-04"
+  }
+]

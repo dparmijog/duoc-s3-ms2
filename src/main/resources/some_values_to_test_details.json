@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "invoiceId": 1,
+    "description": "Dog food - 10kg bag",
+    "quantity": 2,
+    "unitPrice": 25.99,
+    "totalPrice": 51.98
+  },
+  {
+    "id": 2,
+    "invoiceId": 1,
+    "description": "Dog leash - Nylon",
+    "quantity": 1,
+    "unitPrice": 15.49,
+    "totalPrice": 15.49
+  },
+  {
+    "id": 3,
+    "invoiceId": 2,
+    "description": "Cat litter - 5kg bag",
+    "quantity": 3,
+    "unitPrice": 10.99,
+    "totalPrice": 32.97
+  },
+  {
+    "id": 4,
+    "invoiceId": 3,
+    "description": "Vaccination - Rabies",
+    "quantity": 1,
+    "unitPrice": 45.00,
+    "totalPrice": 45.00
+  }
+]

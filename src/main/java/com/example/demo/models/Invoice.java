@@ -1,39 +1,62 @@
 package com.example.demo.models;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import java.math.BigDecimal;
 import java.util.List;
 
+@Entity
+@Table(name="invoice")
 public class Invoice {
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @NotNull
+    @Size(min = 1, max = 30)
+    @Column(name = "issuer_nif")
     private String issuerNif;
+
+    @NotNull
+    @Size(min = 1, max = 60)
+    @Column(name = "issuer_name")
     private String issuerName;
+
+    @NotNull
+    @Size(min = 1, max = 30)
+    @Column(name = "receiver_nif")
     private String receiverNif;
+    @NotNull
+    @Size(min = 1, max = 60)
+    @Column(name = "receiver_name")
     private String receiverName;
+
+    @NotNull
+    @Size(min = 1, max = 30)
+    @Column(name = "pet_name")
     private String petName;
+
+    @NotNull
+    @Size(min = 1, max = 250)
+    @Column(name = "pet_description")
     private String petDescription;
+    @NotNull
+    @Size(min = 1, max = 10)
+    @Column(name = "invoice_date")
     private String date;
-    private List<Detail> details;
 
     public Invoice() {
     }
 
-    public Invoice(String id, String issuerNif, String issuerName, String receiverNif, String receiverName, String petName, String petDescription, String date, List<Detail> details) {
-        this.id = id;
-        this.issuerNif = issuerNif;
-        this.issuerName = issuerName;
-        this.receiverNif = receiverNif;
-        this.receiverName = receiverName;
-        this.petName = petName;
-        this.petDescription = petDescription;
-        this.date = date;
-        this.details = details;
-    }
-
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -87,41 +110,5 @@ public class Invoice {
 
     public String getDate() {
         return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public List<Detail> getDetails() {
-        return details;
-    }
-
-    public void setDetails(List<Detail> details) {
-        this.details = details;
-    }
-
-    public BigDecimal getSubTotal() {
-        BigDecimal total = BigDecimal.ZERO;
-        for (Detail detail : details) {
-            total = detail.getAmount().add(total);
-        }
-        return total;
-    }
-
-    public BigDecimal getVAT() {
-        BigDecimal total = BigDecimal.ZERO;
-        for (Detail detail : details) {
-            total = detail.getAmount().add(total);
-        }
-        return total.multiply(BigDecimal.valueOf(0.19));
-    }
-
-    public BigDecimal getTotal() {
-        BigDecimal total = BigDecimal.ZERO;
-        for (Detail detail : details) {
-            total = detail.getAmount().add(total);
-        }
-        return total.multiply(BigDecimal.valueOf(1.19));
     }
 }
